@@ -1,5 +1,5 @@
-<ul class="list-group">
+<ul class="list-group  side-nav-admin">
     <li class="list-group-item" *ngFor='let item of sideNavInfo'>
-        <a  class='nav-item-cust' href="#" >{{item.name}}</a>
+        <a  class='nav-item-cust' href="#" [routerLink]='item.routerLink' routerLinkActive='active'>{{item.name}}</a>
     </li>
 </ul>

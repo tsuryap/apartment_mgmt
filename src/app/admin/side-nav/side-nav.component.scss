@@ -1,4 +1,13 @@
-.nav-item-cust {
-  font-weight: bold;
-  color:#007bff;
+.side-nav-admin {
+  .nav-item-cust {
+    font-weight: bold;
+    color:#007bff;
+    text-decoration: none;
+  }
+  .active {
+    border-bottom: 2px solid red;
+  }
+
 }
+
+

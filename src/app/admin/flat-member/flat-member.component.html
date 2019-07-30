@@ -1,0 +1,29 @@
+<div class='flat-member'>
+    <div class='member-form'>
+      <form [formGroup]='memberGroup'>
+
+        <div class="form-group">
+          <label >Name</label>
+          <input type="text" class="form-control" formControlName='name'>
+        </div>
+
+        <div class="form-group">
+          <label>Email address</label>
+          <input type="email" class="form-control" formControlName='email'>
+        </div>
+
+        <div class="form-group">
+          <label>Flat No</label>
+          <input type="number" class="form-control" formControlName='flatNo'>
+        </div>
+
+        <div class="form-group">
+          <label>Mobile Number</label>
+          <input type="number" class="form-control" formControlName='mobile'>
+        </div>
+
+        <button type="submit" class="btn btn-primary" [disabled]='memberGroup.invalid' (click)='createMember()'>Submit</button>
+        <button type="submit" class="btn btn-primary ml-2">Reset</button>
+      </form>
+    </div>
+</div>
