@@ -5,25 +5,60 @@
         <div class="form-group">
           <label >Name</label>
           <input type="text" class="form-control" formControlName='name'>
+          <div *ngIf='memberGroup?.controls?.name?.errors'>
+             <span *ngIf='memberGroup?.controls?.name?.errors && memberGroup?.controls?.name?.touched'
+             class='text-danger'>Name is required</span>
+          </div>
         </div>
 
         <div class="form-group">
           <label>Email address</label>
           <input type="email" class="form-control" formControlName='email'>
+          <div *ngIf='memberGroup?.controls?.email?.errors'>
+            <span *ngIf='memberGroup?.controls?.email?.errors?.required && memberGroup?.controls?.email?.touched'
+            class='text-danger'>Email is required</span>
+            <span *ngIf='memberGroup?.controls?.email?.errors?.pattern && memberGroup?.controls?.email?.touched'
+            class='text-danger'>Enter Valid email</span>
+         </div>
         </div>
 
         <div class="form-group">
           <label>Flat No</label>
           <input type="number" class="form-control" formControlName='flatNo'>
-        </div>
+               <span *ngIf='memberGroup?.controls?.flatNo?.errors && memberGroup?.controls?.flatNo?.touched'
+              class='text-danger'>Enter Valid flat No</span>
+         </div>
 
         <div class="form-group">
           <label>Mobile Number</label>
           <input type="number" class="form-control" formControlName='mobile'>
+          <span *ngIf='memberGroup?.controls?.mobile?.errors && memberGroup?.controls?.mobile?.touched'
+          class='text-danger'>Enter Valid Mobile No</span>
         </div>
 
-        <button type="submit" class="btn btn-primary" [disabled]='memberGroup.invalid' (click)='createMember()'>Submit</button>
-        <button type="submit" class="btn btn-primary ml-2">Reset</button>
+        <button type="submit" class="btn btn-primary"  (click)='createMember()'>Submit</button>
+        <button type="submit" class="btn btn-primary ml-2" (click)='memberGroup.reset()'>Reset</button>
       </form>
+    </div>
+
+    <div class='mt-5'>
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Name</th>
+                <th scope="col">email</th>
+                <th scope="col">Mobile</th>
+                <th scope="col">Flat No</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor='let memeber of memberData'>
+                <td>{{memeber.payload.doc.data().name}}</td>
+                <td>{{memeber.payload.doc.data().email}}</td>
+                <td>{{memeber.payload.doc.data().mobile}}</td>
+                <td>{{memeber.payload.doc.data().flatNo}}</td>
+              </tr>
+            </tbody>
+          </table>
     </div>
 </div>
