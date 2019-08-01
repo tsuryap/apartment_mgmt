@@ -8,6 +8,10 @@ import { FooterComponent } from './layout/footer/footer.component';
 import { MainComponent } from './layout/main/main.component';
 import { HomeComponent } from './main/home/home.component';
 import { AdminModule } from './admin/admin.module';
+import { ShowBuzzComponent } from './main/show-buzz/show-buzz.component';
+import { AngularFireModule } from 'angularfire2';
+import { environment } from '../environments/environment';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
 
 @NgModule({
   declarations: [
@@ -15,12 +19,15 @@ import { AdminModule } from './admin/admin.module';
     HeaderComponent,
     FooterComponent,
     MainComponent,
-    HomeComponent
+    HomeComponent,
+    ShowBuzzComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AdminModule
+    AdminModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFirestoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]

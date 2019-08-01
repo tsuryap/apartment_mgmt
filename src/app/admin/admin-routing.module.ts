@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { Routes, RouterModule, Router } from '@angular/router';
 import { AdminComponent } from './admin/admin.component';
 import { FlatMemberComponent } from './flat-member/flat-member.component';
+import { BuzzComponent } from './buzz/buzz.component';
 
 const routes: Routes = [
       {
@@ -16,6 +17,10 @@ const routes: Routes = [
           {
             path: 'vendor',
             component: FlatMemberComponent
+          },
+          {
+            path: 'buzz',
+            component: BuzzComponent
           }
         ]
       }

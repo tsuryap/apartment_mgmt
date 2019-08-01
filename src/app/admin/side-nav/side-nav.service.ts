@@ -15,6 +15,10 @@ export class SideNavService {
        {
         name: 'Manage Vendor',
         routerLink: 'vendor'
+       },
+       {
+        name: 'Manage Announcements',
+        routerLink: 'buzz'
        }
      ];
   }

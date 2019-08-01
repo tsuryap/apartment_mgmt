@@ -10,5 +10,13 @@ export const appGlobals = {
       max: 999
     },
     email: /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/
+  },
+  collections: {
+    member: 'members',
+    buzz: 'buzz'
+  },
+  buttonNames: {
+    submit: 'Submit',
+    reset: 'Reset'
   }
 };

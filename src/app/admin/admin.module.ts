@@ -8,9 +8,10 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { environment } from '../../environments/environment';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireModule } from 'angularfire2';
+import { BuzzComponent } from './buzz/buzz.component';
 
 @NgModule({
-  declarations: [AdminComponent, SideNavComponent, FlatMemberComponent],
+  declarations: [AdminComponent, SideNavComponent, FlatMemberComponent, BuzzComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,

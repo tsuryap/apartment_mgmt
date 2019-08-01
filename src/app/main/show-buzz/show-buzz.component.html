@@ -1,0 +1,17 @@
+<div class='show-buzz'>
+    <div class="card h100">
+      <div class='card-header bg-primary text-white font-weight-bold'>
+         Buzz
+      </div>
+      <div class="card-body">
+        <marquee  direction="up">
+            <ul>
+                <li *ngFor='let item of buzz'>
+                  {{item}}
+                </li>
+
+              </ul>
+        </marquee>
+      </div>
+    </div>
+</div>

@@ -1,0 +1,22 @@
+<div class='buzz'>
+    <div class="card">
+        <div class="card-header bg-primary">
+           Add Annoucements
+        </div>
+        <div class="card-body">
+            <form [formGroup]='buzzForm'>
+                <div class="form-group">
+                    <label >Name</label>
+                      <textarea class='annoucement' formControlName="annoucement">
+                    </textarea>
+                 </div>
+                 <button class='btn btn-primary' (click)='sumbitAnnoucement()' [disabled]='buzzForm.invalid'>
+                    {{appGlobals.buttonNames.submit}}
+                 </button>
+                 <button class='btn btn-secondary ml-5' (click)='buzzForm.reset()'>
+                  {{appGlobals.buttonNames.reset}}
+                 </button>
+             </form>
+        </div>
+      </div>
+</div>
