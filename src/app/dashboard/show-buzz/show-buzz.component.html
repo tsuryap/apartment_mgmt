@@ -4,12 +4,11 @@
          Buzz
       </div>
       <div class="card-body">
-        <marquee  direction="up">
+        <marquee  direction="up" scrolldelay="200">
             <ul>
                 <li *ngFor='let item of buzz'>
-                  {{item}}
+                  <a href="#" [routerLink]="['/admin/vendor']"> {{item}}</a>
                 </li>
-
               </ul>
         </marquee>
       </div>

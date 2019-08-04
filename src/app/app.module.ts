@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './layout/header/header.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { MainComponent } from './layout/main/main.component';
-import { HomeComponent } from './main/home/home.component';
+import { HomeComponent } from './dashboard/home/home.component';
 import { AdminModule } from './admin/admin.module';
-import { ShowBuzzComponent } from './main/show-buzz/show-buzz.component';
+import { ShowBuzzComponent } from './dashboard/show-buzz/show-buzz.component';
 import { AngularFireModule } from 'angularfire2';
 import { environment } from '../environments/environment';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { SharedModule } from './shared/shared.module';
+import { LoaderComponent } from './shared/loader/loader.component';
 
 @NgModule({
   declarations: [
@@ -27,9 +29,10 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
     AppRoutingModule,
     AdminModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    SharedModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent, LoaderComponent]
 })
 export class AppModule { }
