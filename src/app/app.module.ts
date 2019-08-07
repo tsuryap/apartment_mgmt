@@ -7,7 +7,6 @@ import { HeaderComponent } from './layout/header/header.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { MainComponent } from './layout/main/main.component';
 import { HomeComponent } from './dashboard/home/home.component';
-import { AdminModule } from './admin/admin.module';
 import { ShowBuzzComponent } from './dashboard/show-buzz/show-buzz.component';
 import { AngularFireModule } from 'angularfire2';
 import { environment } from '../environments/environment';
@@ -27,7 +26,6 @@ import { LoaderComponent } from './shared/loader/loader.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AdminModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
     SharedModule

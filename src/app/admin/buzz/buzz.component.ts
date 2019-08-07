@@ -3,6 +3,7 @@ import { appGlobals } from '../../../app/global/app.globals';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { BuzzService } from '../services/buzz.service';
 import { ModalService } from '../../shared/services/modal.service';
+import { LoaderService } from 'src/app/shared/loader/loader.service';
 
 @Component({
   selector: 'app-buzz',
@@ -15,7 +16,8 @@ export class BuzzComponent implements OnInit {
   constructor(
      public fb: FormBuilder,
      public buzzServ: BuzzService,
-     public modalService: ModalService) { }
+     public modalService: ModalService,
+     public loaderService: LoaderService) { }
 
   ngOnInit() {
     this.buzzForm = this.fb.group({
@@ -24,18 +26,19 @@ export class BuzzComponent implements OnInit {
   }
 
   sumbitAnnoucement() {
-    this.modalService.show({
-      title: 'Success',
-      msg: 'Buzz Saved successfully'
-    });
-    // this.buzzServ.createBuzz(this.buzzForm.getRawValue()).then(
-    //   res => {
-    //     this.modalService.show();
-    //   },
-    //   error => {
+    this.loaderService.showLoader();
+    this.buzzServ.createBuzz(this.buzzForm.getRawValue()).then(
+      res => {
+        this.modalService.show({
+          title: 'Success',
+          msg: 'Buzz Saved successfully'
+        });
+        this.loaderService.hideLoader();
+      },
+      error => {
 
-    //   }
-    // );
+      }
+    );
   }
 
 }

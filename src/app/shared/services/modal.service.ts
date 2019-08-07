@@ -10,6 +10,8 @@ export class ModalService {
 
   show(params) {
     this.bsModalRef = this.modalService.show(ModalWindowComponent);
-    this.bsModalRef.content.title = 'test';
+    this.bsModalRef.content.title = params.title;
+    this.bsModalRef.content.msg = params.msg;
+
   }
 }

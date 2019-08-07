@@ -7,11 +7,12 @@ import { BsModalRef } from 'ngx-bootstrap';
   styleUrls: ['./modal-window.component.scss']
 })
 export class ModalWindowComponent implements OnInit {
-  title;
+  public title;
+  public msg;
   constructor(public bsModalRef: BsModalRef) { }
 
   ngOnInit() {
-    console.log('title is ', this.title);
+    console.log('title is ', this.bsModalRef.content);
   }
 
 }

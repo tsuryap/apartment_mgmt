@@ -7,7 +7,7 @@ import { BuzzComponent } from './buzz/buzz.component';
 
 const routes: Routes = [
       {
-        path: 'admin',
+        path: '',
         component: AdminComponent,
         children: [
           {

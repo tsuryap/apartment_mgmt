@@ -18,5 +18,14 @@ export const appGlobals = {
   buttonNames: {
     submit: 'Submit',
     reset: 'Reset'
+  },
+  labelNames : {
+    success: 'Success',
+    failure : 'Failure'
+  },
+  msg: {
+    create: 'Saved Succesfully',
+    update: 'Updated Successfully',
+    delete: 'Deleted Successfully'
   }
 };

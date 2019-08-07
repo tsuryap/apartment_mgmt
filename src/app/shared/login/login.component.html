@@ -1,0 +1,16 @@
+<div class="login">
+  <div class='card h100'>
+    <div class="card-header bg-primary">
+      <span class='font-weight-bold text-white'>Login</span>
+    </div>
+    <div class='card-body'>
+      <form [formGroup]="loginFormGroup">
+        <input type="text" class='w-100' formControlName="userName"/>
+        <div class='mt-2'>
+          <button class='btn btn-primary' [disabled]='loginFormGroup.invalid' (click)='login()'>{{appGlb.buttonNames.submit}}</button>
+          <button class='btn btn-secondary ml-2' (click)='loginFormGroup.reset()'>{{appGlb.buttonNames.reset}}</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

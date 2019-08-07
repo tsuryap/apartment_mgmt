@@ -17,4 +17,14 @@ export class MembersService {
   getMembersFromFb() {
     return this.fs.collection(appGlobals.collections.member).snapshotChanges();
   }
+
+  updateMember(params) {
+    return this.fs.collection(appGlobals.collections.member).doc(params.id).set(params, {merge: true});
+  }
+
+  deleteMember(id) {
+    return this.fs.collection(appGlobals.collections.member).doc(id).delete();
+  }
+
+
 }
