@@ -14,7 +14,7 @@ export class RouteGuard   implements CanActivate {
 
   // tslint:disable-next-line: no-unused-expression
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> | boolean {
-   if (!this.userServ.getUserName()) {
+   if (!this.userServ.getUserNameInLocalStorage()) {
     this.router.navigate(['login']);
    }
    return true;

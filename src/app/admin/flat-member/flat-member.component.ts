@@ -6,7 +6,8 @@ import { MembersService } from "../services/members.service";
 import { LoaderService } from "src/app/shared/loader/loader.service";
 import { ModalService } from "src/app/shared/services/modal.service";
 import { app } from "firebase";
-
+import { UserService } from 'src/app/shared/services/user.service';
+import { Directive,  ElementRef } from '@angular/core';
 @Component({
   selector: "app-flat-member",
   templateUrl: "./flat-member.component.html",
@@ -20,15 +21,16 @@ export class FlatMemberComponent implements OnInit {
     public fs: AngularFirestore,
     public memberServ: MembersService,
     public loader: LoaderService,
-    public modalService: ModalService
+    public modalService: ModalService,
+    public userServ: UserService
   ) {}
 
   ngOnInit() {
     this.memberGroup = this.fb.group({
-      id: ["", []],
-      name: ["", [Validators.required]],
+      id: ['', []],
+      name: ['', [Validators.required]],
       email: [
-        "",
+        '',
         [
           Validators.required,
           Validators.pattern(appGlobals.validationsInfo.email)
@@ -36,7 +38,7 @@ export class FlatMemberComponent implements OnInit {
       ],
       // tslint:disable-next-line: max-line-length
       mobile: [
-        "",
+        '',
         [
           Validators.required,
           Validators.min(appGlobals.validationsInfo.mobile.min),
@@ -45,7 +47,7 @@ export class FlatMemberComponent implements OnInit {
       ],
       // tslint:disable-next-line: max-line-length
       flatNo: [
-        "",
+        '',
         [
           Validators.required,
           Validators.min(appGlobals.validationsInfo.flat.min),
@@ -130,3 +132,9 @@ export class FlatMemberComponent implements OnInit {
     this.getMembers();
   }
 }
+
+
+
+
+
+
